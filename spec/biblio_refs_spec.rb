@@ -123,5 +123,9 @@ describe BiblioRefs do
       expect(@lista.to_s).to eq("prueba -> 3 -> 2")
     end
 
+    it 'Debe existir una lista con su cabeza' do
+      expect(@lista.head[:value]).to eq("prueba")
+    end
+
   end
 end
