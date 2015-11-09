@@ -119,7 +119,7 @@ describe BiblioRefs do
     end
 
     it 'Se pueden insertar varios elementos' do
-      @lista.push(["prueba", 3, 2])
+      @lista.push([3, 2])
       expect(@lista.to_s).to eq("prueba -> 3 -> 2")
     end
 

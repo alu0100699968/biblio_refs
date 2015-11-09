@@ -17,10 +17,19 @@ module BiblioRefs
 
     def push(items)
       aux = @head
-      while aux[:next] do
-        aux = aux[:next]
+      if items.kind_of?(Array)
+        items.each do |item|
+          while aux[:next] do
+            aux = aux[:next]
+          end
+          aux[:next] = Node.new(item, nil)
+        end
+      else
+        while aux[:next] do
+          aux = aux[:next]
+        end
+        aux[:next] = Node.new(items, nil)
       end
-      aux[:next] = Node.new(items, nil)
     end
 
     def to_s
