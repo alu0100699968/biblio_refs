@@ -94,7 +94,7 @@ describe BiblioRefs do
   describe "Nodo" do
 
     before :each do
-      @nodo = BiblioRefs::Nodo.new("Prueba", nil)
+      @nodo = Node.new("Prueba", nil)
     end
 
     it 'Debe existir un Nodo de la lista con sus datos y su siguiente' do
