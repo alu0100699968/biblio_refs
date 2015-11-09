@@ -113,5 +113,10 @@ describe BiblioRefs do
       expect(@lista.pop).to eq("prueba")
     end
 
+    it 'Se puede insertar un elemento' do
+      @lista.push("abeurp")
+      expect(@lista.to_s).to eq("prueba -> abeurp")
+    end
+
   end
 end
