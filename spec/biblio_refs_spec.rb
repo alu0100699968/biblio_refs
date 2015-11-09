@@ -106,7 +106,7 @@ describe BiblioRefs do
   describe "List" do
 
     before :each do
-      @lista = List.new("prueba")
+      @lista = BiblioRefs::List.new("prueba")
     end
 
     it 'Se extrae el primer elemento de la lista' do
