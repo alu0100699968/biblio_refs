@@ -102,4 +102,16 @@ describe BiblioRefs do
       expect(@nodo[:next]).to be nil
     end
   end
+
+  describe "List" do
+
+    before :each do
+      @lista = List.new("prueba")
+    end
+
+    it 'Se extrae el primer elemento de la lista' do
+      expect(@lista.pop).to eq("prueba")
+    end
+
+  end
 end
