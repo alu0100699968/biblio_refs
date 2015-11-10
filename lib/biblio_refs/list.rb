@@ -6,7 +6,13 @@ module BiblioRefs
     attr_accessor :head
 
     def initialize(items)
-      @head = Node.new(items, nil)
+      if items.kind_of?(Array)
+        @head = Node.new(items[0], nil)
+        items.shift
+        push(items)
+      else
+        @head = Node.new(items, nil)
+      end
     end
 
     def pop
