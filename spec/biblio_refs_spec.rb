@@ -119,6 +119,10 @@ describe BiblioRefs do
       expect(@lista2.head[:value]).to eq("elemento1")
     end
 
+    it '#Debe existir una lista con su cola' do
+      expect(@lista2.tail[:value]).to eq("elemento2")
+    end
+
   	it '#Se extrae el primer elemento de la lista' do
   	  expect(@lista1.pop).to eq("elemento")
   	  expect(@lista2.pop).to eq("elemento1")
