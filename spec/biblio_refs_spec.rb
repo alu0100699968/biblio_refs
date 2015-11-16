@@ -93,8 +93,9 @@ describe BiblioRefs do
 
   describe "Nodo" do
     before :each do
-      @nodo1 = Nodo.new("último", nil, @nodo2)
+      @nodo1 = Nodo.new("último", nil, nil)
       @nodo2 = Nodo.new("primero", @nodo1, nil)
+      @nodo1[:prev] = @nodo2
     end
 
    	it '#Debe existir un Nodo en la lista con sus datos y su siguiente' do
