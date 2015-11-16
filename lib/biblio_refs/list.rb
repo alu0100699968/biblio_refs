@@ -1,54 +1,42 @@
-Node = Struct.new(:value, :next)
+# create a Struct with :value and :next
+Nodo = Struct.new(:value, :next)
 
 module BiblioRefs
-  class List
-
+	class List
     attr_accessor :head
 
-    def initialize(items)
-      if items.kind_of?(Array)
-        @head = Node.new(items[0], nil)
-        items.shift
-        push(items)
-      else
-        @head = Node.new(items, nil)
+		def initialize(*nodo)
+      @head = Nodo.new(nodo[0], nil)
+      if nodo.size > 1
+        nodo.shift
+        push(*nodo)
       end
     end
 
     def pop
-      aux = @head
+      nodo = @head
       @head = @head[:next]
-      aux[:value]
+      nodo[:value]
     end
 
-    def push(items)
+    def push(*nodo)
       aux = @head
-      if items.kind_of?(Array)
-        items.each do |item|
-          while aux[:next] do
-            aux = aux[:next]
-          end
-          aux[:next] = Node.new(item, nil)
-        end
-      else
+      nodo.each do |n|
         while aux[:next] do
           aux = aux[:next]
         end
-        aux[:next] = Node.new(items, nil)
+        aux[:next] = Nodo.new(n, nil)
       end
     end
 
-    def to_s
+      def to_s
       aux = @head
-      salida = ""
+      string = "Lista: "
       while aux[:next] do
-        salida += "#{aux[:value]}"
-        salida += " -> "
+        string += "#{aux[:value]}" + " -> "
         aux = aux[:next]
       end
-      salida += "#{aux[:value]}"
-      salida
+      string += "#{aux[:value]}"
     end
-
   end
 end
