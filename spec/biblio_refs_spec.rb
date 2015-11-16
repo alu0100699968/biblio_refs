@@ -120,6 +120,7 @@ describe BiblioRefs do
     end
 
     it '#Debe existir una lista con su cola' do
+      expect(@lista1.tail[:value]).to eq("elemento")
       expect(@lista2.tail[:value]).to eq("elemento2")
     end
 

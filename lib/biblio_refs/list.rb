@@ -3,10 +3,10 @@ Nodo = Struct.new(:value, :next, :prev)
 
 module BiblioRefs
 	class List
-    attr_accessor :head
+    attr_accessor :head, :tail
 
 		def initialize(*nodo)
-      @head = Nodo.new(nodo[0], nil)
+      @tail = @head = Nodo.new(nodo[0], nil)
       if nodo.size > 1
         nodo.shift
         push(*nodo)
@@ -25,11 +25,11 @@ module BiblioRefs
         while aux[:next] do
           aux = aux[:next]
         end
-        aux[:next] = Nodo.new(n, nil)
+        @tail = aux[:next] = Nodo.new(n, nil)
       end
     end
 
-      def to_s
+    def to_s
       aux = @head
       string = "Lista: "
       while aux[:next] do
