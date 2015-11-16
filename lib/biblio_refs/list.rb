@@ -25,7 +25,7 @@ module BiblioRefs
         while aux[:next] do
           aux = aux[:next]
         end
-        @tail = aux[:next] = Nodo.new(n, nil)
+        @tail = aux[:next] = Nodo.new(n, nil, aux)
       end
     end
 
