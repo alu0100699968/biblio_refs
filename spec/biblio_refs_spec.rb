@@ -93,13 +93,17 @@ describe BiblioRefs do
 
   describe "Nodo" do
     before :each do
-      @nodo1 = Nodo.new("último", nil)
-      @nodo2 = Nodo.new("primero", @nodo1)
+      @nodo1 = Nodo.new("último", nil, @nodo2)
+      @nodo2 = Nodo.new("primero", @nodo1, nil)
     end
 
    	it '#Debe existir un Nodo en la lista con sus datos y su siguiente' do
       expect(@nodo2[:value]).to eq("primero")
       expect(@nodo2[:next]).to eq(@nodo1)
+    end
+
+    it '#Debe exisitir un Nodo con su anterior' do
+      expect(@nodo1[:prev]).to eq(@nodo2)
     end
   end
 
