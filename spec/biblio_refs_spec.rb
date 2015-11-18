@@ -164,4 +164,14 @@ describe BiblioRefs do
       expect(@lista.to_s).to eq("Lista: #{@refa} -> #{@refb} -> #{@refc} -> #{@refd} -> #{@refe}")
     end
   end
+
+  describe "Jerarquía de clases" do
+    before :each do
+      @ref1 = BiblioRefs::PublicacionesPeriodicas.new
+    end
+
+    it "La clase para representar referencias de publicaciones periódicas pertenece a la jerarquía de clases" do
+      expect(@ref1).to be_a BiblioRefs::Referencia
+    end
+  end
 end
