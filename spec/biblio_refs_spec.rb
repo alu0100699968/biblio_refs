@@ -188,8 +188,8 @@ describe BiblioRefs do
     end
 
     it "La clase para representar referencias de documentos electrónicos pertenece a la jerarquía de clases" do
-      expect(@ref3).to be_a BiblioRefs::Referencia
-      expect(@ref3).to be_a BiblioRefs::PublicacionesPeriodicas
+      expect(@ref4).to be_a BiblioRefs::Referencia
+      expect(@ref4).to be_a BiblioRefs::PublicacionesPeriodicas
     end
   end
 end
