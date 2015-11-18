@@ -169,6 +169,7 @@ describe BiblioRefs do
     before :each do
       @ref1 = BiblioRefs::PublicacionesPeriodicas.new
       @ref2 = BiblioRefs::ArticuloRevista.new
+      @ref3 = BiblioRefs::ArticuloPeriodico.new
     end
 
     it "La clase para representar referencias de publicaciones periódicas pertenece a la jerarquía de clases" do
@@ -178,6 +179,11 @@ describe BiblioRefs do
     it "La clase para representar referencias de artículos de revista pertenece a la jerarquía de clases" do
       expect(@ref2).to be_a BiblioRefs::Referencia
       expect(@ref2).to be_a BiblioRefs::PublicacionesPeriodicas
+    end
+
+    it "La clase para representar referencias de artículos de periódico pertenece a la jerarquía de clases" do
+      expect(@ref3).to be_a BiblioRefs::Referencia
+      expect(@ref3).to be_a BiblioRefs::PublicacionesPeriodicas
     end
   end
 end
