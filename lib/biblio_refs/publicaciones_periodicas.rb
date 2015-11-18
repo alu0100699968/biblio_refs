@@ -3,6 +3,6 @@ module BiblioRefs
 
     def initialize
     end
-    
+
   end
 end
