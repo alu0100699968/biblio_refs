@@ -191,5 +191,9 @@ describe BiblioRefs do
       expect(@ref4).to be_a BiblioRefs::Referencia
       expect(@ref4).to be_a BiblioRefs::PublicacionesPeriodicas
     end
+
+    it "Comprobando herencia" do
+      expect(@ref4.is_a?BiblioRefs::Referencia).to eq(true)
+    end
   end
 end
