@@ -87,6 +87,14 @@ module BiblioRefs
         false
       end
     end
-    
+
+    def <=>(ref)
+      if ref.instance_of?Referencia
+        @fecha_publicacion <=> ref.fecha_publicacion
+      else
+        nil
+      end
+    end
+
   end
 end
