@@ -196,4 +196,16 @@ describe BiblioRefs do
       expect(@ref4.is_a?BiblioRefs::Referencia).to eq(true)
     end
   end
+
+  describe "Haciendo la clase Referencia comparable" do
+    before :each do
+      @ref1 = BiblioRefs::Referencia.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "The Facets of Ruby", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), ['978-1937785499', '1937785491'])
+      @ref2 = BiblioRefs::Referencia.new("Scott Chacon", "Pro Git 2009th Edition", "Pro", "Apress", 2009, Date.parse('27th August 2009'), ['978-1430218333', '1430218339'])
+      @ref3 = BiblioRefs::Referencia.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "The Facets of Ruby", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), ['978-1937785499', '1937785491'])
+    end
+
+    it "Dos referencias son iguales" do
+      expect(@ref1 == @ref3).to eq(true)
+    end
+  end
 end
