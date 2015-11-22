@@ -207,5 +207,13 @@ describe BiblioRefs do
     it "Dos referencias son iguales" do
       expect(@ref1 == @ref3).to eq(true)
     end
+
+    it "Dos referencias son diferentes" do
+      expect(@ref1 == @ref2).to eq(false)
+    end
+
+    it "Una referencia de 2009 es más vieja que una de 2013" do
+      expect(@ref2 < @ref3).to eq(true)
+    end
   end
 end
