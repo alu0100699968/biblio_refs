@@ -1,5 +1,7 @@
 # Biblio::Refs
 
+[![Build Status](https://travis-ci.org/alu0100699968/biblio_refs.svg?branch=modulos_sergio)](https://travis-ci.org/alu0100699968/biblio_refs)
+
 Gema para la representación de referencias de una Bibliografía. Realizada para la práctica 6 de la asignatura Lenguajes y Paradigmas de la Programación.
 
 ### Autores
