@@ -3,6 +3,8 @@ Nodo = Struct.new(:value, :next, :prev)
 
 module BiblioRefs
 	class List
+		include Enumerable
+
     attr_accessor :head, :tail
 
 		def initialize(*nodo)
@@ -11,6 +13,15 @@ module BiblioRefs
         nodo.shift
         push(*nodo)
       end
+    end
+
+		def each
+    	aux=@head
+    	while aux[:next]
+    		yield aux[:value]
+    		aux=aux[:next]
+    	end
+    	yield aux[:value]
     end
 
     def pop
