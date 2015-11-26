@@ -233,6 +233,14 @@ describe BiblioRefs do
       @lista2 = BiblioRefs::List.new(5, 6, 4)
       @lista3 = BiblioRefs::List.new(nil, 9)
       @lista4 = BiblioRefs::List.new(nil, false)
+
+      @refa = BiblioRefs::Referencia.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "The Facets of Ruby", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), ['978-1937785499', '1937785491'])
+      @refb = BiblioRefs::Referencia.new("Scott Chacon", "Pro Git 2009th Edition", "Pro", "Apress", 2009, Date.parse('27th August 2009'), ['978-1430218333', '1430218339'])
+      @refc = BiblioRefs::Referencia.new(["David Flanagan", "Yukihiro Matsumoto"], "The Ruby Programming Language", "O'Reilly Media", 1, Date.parse('4th February 2008'), ['0596516177', '978-0596516178'])
+      @refd = BiblioRefs::Referencia.new(["David Chelimsky", "Dave Astels", "Bryan Helmkamp", "Dan North", "Zach Dennis", "Aslak Hellesoy"], "The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends", "The Facets of Ruby", "Pragmatic Bookshelf", 1, Date.parse('25th December 2010'), ['1934356379', '978-1934356371'])
+      @refe = BiblioRefs::Referencia.new("Richard E. Silverman", "Git Pocket Guide", "O'Reilly Media", 1, Date.parse('2nd August 2013'), ['1449325866', '978-1449325862'])
+
+      @lista_ref = BiblioRefs::List.new(@refa, @refb, @refc, @refd, @refe)
     end
 
     it "Comprobrando el metodo all? con un bloque vacio" do
@@ -267,14 +275,17 @@ describe BiblioRefs do
 
     it "Comprobrando max" do
       expect(@lista2.max).to eq(6)
+      expect(@lista_ref.max).to eq(@refe)
     end
 
     it "Comprobrando min" do
       expect(@lista2.min).to eq(4)
+      expect(@lista_ref.min).to eq(@refc)
     end
 
     it "Comprobrando sort" do
       expect(@lista2.sort).to eq([4, 5, 6])
+      expect(@lista_ref.sort).to eq([@refc, @refb, @refd, @refa, @refe])
     end
   end
 end
