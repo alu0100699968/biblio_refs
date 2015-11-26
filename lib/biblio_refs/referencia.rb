@@ -80,19 +80,19 @@ module BiblioRefs
       final += editorial_to_s + "; " + num_edicion_to_s + " (" + fecha_publicacion_to_s + ")\n" + isbn_to_s
     end
 
-    def ==(ref)
-      if ref.instance_of?Referencia
-        self.to_s == ref.to_s
-      else
-        false
-      end
-    end
-
     def <=>(ref)
       if ref.instance_of?Referencia
         @fecha_publicacion <=> ref.fecha_publicacion
       else
         nil
+      end
+    end
+
+    def ==(ref)
+      if ref.instance_of?Referencia
+        self.to_s == ref.to_s
+      else
+        false
       end
     end
 
