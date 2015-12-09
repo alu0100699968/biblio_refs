@@ -299,11 +299,15 @@ describe BiblioRefs do
 
       @lista_refs = BiblioRefs::List.new(@refa, @refb, @refc, @refd, @refe)
 
-      @lista_apa = BiblioRefs::ListaAPA.new(@lista)
+      @lista_apa = BiblioRefs::ListaAPA.new(@lista_refs)
     end
 
     it "Se crea un objeto del tipo ListaAPA" do
       expect(@lista_apa).not_to be nil
+    end
+
+    it "La lista debe ordenarse por orden alfabético según el apellido de los autores" do
+      expect(@lista_apa.lista.to_s).to eq("Lista: #{@refb} -> #{@refd} -> #{@refe} -> #{@refc} -> #{@refa}")
     end
   end
 end
