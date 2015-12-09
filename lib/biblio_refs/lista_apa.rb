@@ -4,6 +4,17 @@ module BiblioRefs
 
     def initialize(lista)
       @lista = lista
+      ordenar
+    end
+
+    def ordenar
+      array = @lista.sort
+      lista_aux = BiblioRefs::List.new(array[0])
+      array.shift
+      array.each do |ref|
+        lista_aux.push(ref)
+      end
+      @lista = lista_aux
     end
   end
 end

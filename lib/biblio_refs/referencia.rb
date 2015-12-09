@@ -81,8 +81,52 @@ module BiblioRefs
     end
 
     def <=>(ref)
-      if ref.instance_of?Referencia
-        @fecha_publicacion <=> ref.fecha_publicacion
+      if ref.instance_of?BiblioRefs::Referencia
+        if(@autores.kind_of?(Array) && ref.autores.kind_of?(Array))
+          if((@autores[0] <=> ref.autores[0]) == 0)
+            if((@fecha_publicacion <=> ref.fecha_publicacion) == 0)
+              @titulo <=> ref.titulo
+            else
+              @fecha_publicacion <=> ref.fecha_publicacion
+            end
+          else
+            @autores[0] <=> ref.autores[0]
+          end
+        else
+          if(@autores.kind_of?(Array) && !ref.autores.kind_of?(Array))
+            if((@autores[0] <=> ref.autores) == 0)
+              if((@fecha_publicacion <=> ref.fecha_publicacion) == 0)
+                @titulo <=> ref.titulo
+              else
+                @fecha_publicacion <=> ref.fecha_publicacion
+              end
+            else
+              @autores[0] <=> ref.autores
+            end
+          else
+            if(!@autores.kind_of?(Array) && ref.autores.kind_of?(Array))
+              if((@autores <=> ref.autores[0]) == 0)
+                if((@fecha_publicacion <=> ref.fecha_publicacion) == 0)
+                  @titulo <=> ref.titulo
+                else
+                  @fecha_publicacion <=> ref.fecha_publicacion
+                end
+              else
+                @autores <=> ref.autores[0]
+              end
+            else
+              if((@autores <=> ref.autores) == 0)
+                if((@fecha_publicacion <=> ref.fecha_publicacion) == 0)
+                  @titulo <=> ref.titulo
+                else
+                  @fecha_publicacion <=> ref.fecha_publicacion
+                end
+              else
+                @autores <=> ref.autores
+              end
+            end
+          end
+        end
       else
         nil
       end

@@ -49,5 +49,5 @@ module BiblioRefs
       end
       string += "#{aux[:value]}"
     end
-  end
+	end
 end
