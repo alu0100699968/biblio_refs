@@ -297,7 +297,9 @@ describe BiblioRefs do
       @refd = BiblioRefs::Referencia.new(["David Chelimsky", "Dave Astels", "Bryan Helmkamp", "Dan North", "Zach Dennis", "Aslak Hellesoy"], "The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends", "The Facets of Ruby", "Pragmatic Bookshelf", 1, Date.parse('25th December 2010'), ['1934356379', '978-1934356371'])
       @refe = BiblioRefs::Referencia.new("Richard E. Silverman", "Git Pocket Guide", "O'Reilly Media", 1, Date.parse('2nd August 2013'), ['1449325866', '978-1449325862'])
 
-      @lista_apa = BiblioRefs::ListaAPA.new(@refa, @refb, @refc, @refd, @refe)
+      @lista_refs = BiblioRefs::List.new(@refa, @refb, @refc, @refd, @refe)
+
+      @lista_apa = BiblioRefs::ListaAPA.new(@lista)
     end
 
     it "Se crea un objeto del tipo ListaAPA" do
