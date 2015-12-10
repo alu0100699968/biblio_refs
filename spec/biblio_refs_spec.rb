@@ -291,13 +291,10 @@ describe BiblioRefs do
 
   describe "Lista APA" do
     before :each do
-      @refa = BiblioRefs::Referencia.new(["Thomas, Dave", "Hunt, Andy", "Fowler, Chad"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "The Facets of Ruby", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), ['978-1937785499', '1937785491'])
+      @refa = BiblioRefs::Referencia.new(["Thomas, Dave", "Hunt, Andy"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "The Facets of Ruby", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), ['978-1937785499', '1937785491'])
       @refb = BiblioRefs::Referencia.new("Chacon, Scott", "Pro Git 2009th Edition", "Pro", "Apress", 2009, Date.parse('27th August 2009'), ['978-1430218333', '1430218339'])
-      @refc = BiblioRefs::Referencia.new(["Flanagan, David", "Yukihiro Matsumoto"], "The Ruby Programming Language", "O'Reilly Media", 1, Date.parse('4th February 2008'), ['0596516177', '978-0596516178'])
-      @refd = BiblioRefs::Referencia.new(["Chelimsky, David", "Dave, Astels", "Helmkamp, Bryan", "North, Dan"], "The RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends", "The Facets of Ruby", "Pragmatic Bookshelf", 1, Date.parse('25th December 2010'), ['1934356379', '978-1934356371'])
-      @refe = BiblioRefs::Referencia.new("Silverman, Richard", "Git Pocket Guide", "O'Reilly Media", 1, Date.parse('2nd August 2013'), ['1449325866', '978-1449325862'])
 
-      @lista_refs = BiblioRefs::List.new(@refa, @refb, @refc, @refd, @refe)
+      @lista_refs = BiblioRefs::List.new(@refa, @refb)
 
       @lista_apa = BiblioRefs::ListaAPA.new(@lista_refs)
     end
@@ -307,7 +304,11 @@ describe BiblioRefs do
     end
 
     it "La lista debe ordenarse por orden alfabético según el apellido de los autores" do
-      expect(@lista_apa.lista.to_s).to eq("Lista: #{@refb} -> #{@refd} -> #{@refc} -> #{@refe} -> #{@refa}")
+      expect(@lista_apa.lista.to_s).to eq("Lista: #{@refb} -> #{@refa}")
+    end
+
+    it "La lista se muestra en el formato adecuado" do
+      expect(@lista_apa.to_s).to eq("Lista: #{@refb} -> #{@refa}")
     end
   end
 end
