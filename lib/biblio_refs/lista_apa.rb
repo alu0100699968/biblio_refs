@@ -18,6 +18,17 @@ module BiblioRefs
     end
 
     def to_s
+      class << @lista #Se accede a la eigenclass de @lista para redefinir el método to_s
+        def to_s
+          aux = @head
+          string = ""
+          while aux[:next] do
+            string += "#{aux[:value]}" + "\n\n"
+            aux = aux[:next]
+          end
+          string += "#{aux[:value]}"
+        end
+      end
       @lista.to_s
     end
   end

@@ -308,7 +308,7 @@ describe BiblioRefs do
     end
 
     it "La lista se muestra en el formato adecuado" do
-      expect(@lista_apa.to_s).to eq("Lista: #{@refb} -> #{@refa}")
+      expect(@lista_apa.to_s).to eq("#{@refb}\n\n#{@refa}")
     end
   end
 end
