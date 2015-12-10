@@ -81,7 +81,7 @@ module BiblioRefs
     end
 
     def <=>(ref)
-      if ref.instance_of?BiblioRefs::Referencia
+      if ref.is_a?BiblioRefs::Referencia
         if(@autores.kind_of?(Array) && ref.autores.kind_of?(Array))
           if((@autores[0] <=> ref.autores[0]) == 0)
             if((@fecha_publicacion <=> ref.fecha_publicacion) == 0)

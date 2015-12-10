@@ -16,5 +16,9 @@ module BiblioRefs
       end
       @lista = lista_aux
     end
+
+    def to_s
+      @lista.to_s
+    end
   end
 end
