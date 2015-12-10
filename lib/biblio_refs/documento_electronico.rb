@@ -35,7 +35,7 @@ module BiblioRefs
 
     def to_s
       final = autores_to_s + "(" + fecha_publicacion_to_s + "). "
-      final += titulo_to_s + " (" + num_edicion_to_s + "), " + "[" + tipo_medio + "]. "
+      final += "\n\t" + titulo_to_s + " (" + num_edicion_to_s + "), " + "[" + tipo_medio + "]. "
       final += "Lugar de publicación: " + editorial_to_s + ". Disponible en: " + via.to_s
       final += " [" + fecha_acceso_to_s + "]"
     end

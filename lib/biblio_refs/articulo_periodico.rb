@@ -28,7 +28,7 @@ module BiblioRefs
 
     def to_s
       final = autores_to_s + "(" + fecha_publicacion_to_s + "). "
-      final += titulo_to_s + ". " + nombre_periodico.to_s + ", pp. "
+      final += "\n\t" + titulo_to_s + ". " + nombre_periodico.to_s + ", pp. "
       final += num_paginas.to_s + "."
     end
 

@@ -51,7 +51,7 @@ module BiblioRefs
 
     def to_s
       final = autores_to_s + fecha_publicacion_to_s
-      final += titulo_to_s + ". En " + eds_to_s + "(Eds.), "
+      final += "\n\t" + titulo_to_s + ". En " + eds_to_s + "(Eds.), "
       final += titulo_obra.to_s + " (" + paginas.to_s + ") " + "(" + num_edicion_to_s + ") "
       final += "(" + volumen.to_s + "). Lugar de publicación: " + editorial_to_s
     end
