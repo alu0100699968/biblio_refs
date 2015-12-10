@@ -1,17 +1,15 @@
 module BiblioRefs
-  class ArticuloRevista < PublicacionesPeriodicas
+  class Libro < Referencia
 
-    attr_accessor :paginas, :volumen, :eds
+    attr_accessor :volumen
 
-    def initialize(autores, titulo, editorial, num_edicion, fecha_publicacion, volumen, paginas, eds)
+    def initialize(autores, titulo, editorial, num_edicion, fecha_publicacion, volumen)
       @autores = autores
       @titulo = titulo
       @editorial = editorial
       @num_edicion = num_edicion
       @fecha_publicacion = fecha_publicacion
       @volumen = volumen
-      @paginas = paginas
-      @eds = eds
     end
 
     def autores_to_s
@@ -27,6 +25,16 @@ module BiblioRefs
         final += "  "
       end
       final.chop
+    end
+
+    def fecha_publicacion_to_s
+      "(" + fecha_publicacion.year.to_s + "). "
+    end
+
+    def to_s
+      final = autores_to_s + fecha_publicacion_to_s
+      final += "Título del libro: " + titulo_to_s + " (" + num_edicion_to_s + ") "
+      final += "(" + volumen.to_s + "). " + "Lugar de publicación: " + editorial_to_s + "."
     end
 
   end
