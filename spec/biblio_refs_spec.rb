@@ -291,10 +291,11 @@ describe BiblioRefs do
 
   describe "Lista APA" do
     before :each do
-      @refa = BiblioRefs::Referencia.new(["Thomas, Dave", "Hunt, Andy"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "The Facets of Ruby", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), ['978-1937785499', '1937785491'])
-      @refb = BiblioRefs::Referencia.new("Chacon, Scott", "Pro Git 2009th Edition", "Pro", "Apress", 2009, Date.parse('27th August 2009'), ['978-1430218333', '1430218339'])
+      @ref1 = BiblioRefs::ArticuloRevista.new("Hunt, H.A.", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "Titulo Obra", "Pragmatic Bookshelf", 4, Date.parse('7th July 2013'), 3, 43, ["Pepe, P.P", "Juan, J.J"])
+      @ref2 = BiblioRefs::ArticuloPeriodico.new("García, G.P.", Date.parse('3rd june 2010'), "Cambio Climático", "El Mundo", 3)
+      @ref3 = BiblioRefs::DocumentoElectronico.new("Luis, L.M.", Date.parse('3rd june 2010'), "Economía Hundida", 4, "Blog", "Editorial Humilde", "web", Date.parse('4th July 2015'))
 
-      @lista_refs = BiblioRefs::List.new(@refa, @refb)
+      @lista_refs = BiblioRefs::List.new(@ref1, @ref2, @ref3)
 
       @lista_apa = BiblioRefs::ListaAPA.new(@lista_refs)
     end
@@ -304,11 +305,11 @@ describe BiblioRefs do
     end
 
     it "La lista debe ordenarse por orden alfabético según el apellido de los autores" do
-      expect(@lista_apa.lista.to_s).to eq("Lista: #{@refb} -> #{@refa}")
+      expect(@lista_apa.lista.to_s).to eq("Lista: #{@ref2} -> #{@ref1} -> #{@ref3}")
     end
 
     it "La lista se muestra en el formato adecuado" do
-      expect(@lista_apa.to_s).to eq("#{@refb}\n\n#{@refa}")
+      expect(@lista_apa.to_s).to eq("#{@ref2}\n\n#{@ref1}\n\n#{@ref3}")
     end
   end
 end
