@@ -13,7 +13,7 @@ module BiblioRefs
         nodo.shift
         push(*nodo)
       end
-    end
+		end
 
 		def each
     	aux=@head
@@ -22,7 +22,7 @@ module BiblioRefs
     		aux=aux[:next]
     	end
     	yield aux[:value]
-    end
+		end
 
     def pop
       nodo = @head
