@@ -312,12 +312,12 @@ describe BiblioRefs do
   describe 'DSL' do
     before :each do
       @libro = BiblioRefs::Libro.crear do
-        autor :apellido => 'Apellido',
-              :nombre => 'Nombre'
-        autor :apellido => 'Apellido2',
-              :nombre => 'Nombre2'
+        autor :apellido => 'González',
+              :nombre => 'G.G.'
+        autor :apellido => 'Rodríguez',
+              :nombre => 'R.R.'
         title 'Título'
-        libro :volumen => 3
+        libro 3
         info :editorial => 'Editorial',
              :num_edicion => 3,
              :fecha_publicacion => '1st June 2004'
@@ -366,10 +366,17 @@ describe BiblioRefs do
     end
 
     it 'El nombre de los autores se pasa correctamente' do
-      expect(@libro.autores_to_s).to eq("Apellido, Nombre & Apellido2, Nombre2")
+      expect(@libro.autores_to_s).to eq("González, G.G. & Rodríguez, R.R.")
       expect(@articulo.autores_to_s).to eq("Apellido, Nombre")
       expect(@articulo_periodico.autores_to_s).to eq("Apellido, Nombre")
       expect(@documento.autores_to_s).to eq("Apellido, Nombre")
+    end
+
+    it 'La salida de las referencias es la correcta' do
+      expect(@libro.to_s).to eq("González, G.G. & Rodríguez, R.R. (2004). \n\tTítulo del libro: Título (3 edition) (3). Lugar de publicación: Editorial.")
+      expect(@articulo.to_s).to eq("Apellido, Nombre (2004). \n\tTítulo. En Editor (Eds.), Título de Obra (10) (3 edition) (3). Lugar de publicación: Editorial")
+      expect(@articulo_periodico.to_s).to eq("Apellido, Nombre (June 1, 2004). \n\tTítulo. Nombre Periodico, pp. 10.")
+      expect(@documento.to_s).to eq("Apellido, Nombre (June 1, 2004). \n\tTítulo (3 edition), [Tipo de Medio]. Lugar de publicación: Editorial. Disponible en: Tipo de vía [June 1, 2004]")
     end
   end
 end
