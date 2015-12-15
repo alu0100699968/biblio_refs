@@ -36,7 +36,15 @@ module BiblioRefs
     end
 
     def autor(autor = {})
-      @autores = "#{autor[:apellido]}, #{autor[:nombre]}"
+      if @autores == nil
+        @autores = "#{autor[:apellido]}, #{autor[:nombre]}"
+      elsif @autores.kind_of?Array
+        @autorea << "#{autor[:apellido]}, #{autor[:nombre]}"
+      else
+        autores_array = [@autores]
+        autores_array << "#{autor[:apellido]}, #{autor[:nombre]}"
+        @autores = autores_array
+      end
     end
 
     def title(titulo = {})
