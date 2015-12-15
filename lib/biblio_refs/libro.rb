@@ -12,6 +12,10 @@ module BiblioRefs
       @volumen = volumen
     end
 
+    def libro(libro = {})
+      @volumen = libro
+    end
+
     def autores_to_s
       final = ""
       if autores.kind_of?(Array)

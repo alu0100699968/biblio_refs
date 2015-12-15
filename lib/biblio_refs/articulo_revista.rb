@@ -15,6 +15,13 @@ module BiblioRefs
       @eds = eds
     end
 
+    def articulo(articulo = {})
+      @titulo_obra = articulo[:titulo_obra]
+      @paginas = articulo[:paginas]
+      @volumen = articulo[:volumen]
+      @eds = articulo[:eds]
+    end
+
     def autores_to_s
       final = ""
       if autores.kind_of?(Array)

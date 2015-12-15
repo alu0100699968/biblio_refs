@@ -311,20 +311,20 @@ describe BiblioRefs do
 
   describe 'DSL' do
     before :each do
-      @libro = BiblioRefs::Libro.new do
+      @libro = BiblioRefs::Libro.crear do
         autor :apellido => 'Apellido',
               :nombre => 'Nombre'
-        titulo :titulo => 'Título'
+        title 'Título'
         libro :volumen => 3
         info :editorial => 'Editorial',
              :num_edicion => 3,
              :fecha_publicacion => '1st June 2004'
       end
 
-      @articulo = BiblioRefs::ArticuloRevista.new do
+      @articulo = BiblioRefs::ArticuloRevista.crear do
         autor :apellido => 'Apellido',
               :nombre => 'Nombre'
-        titulo :titulo => 'Título'
+        title  'Título'
         articulo  :titulo_obra => 'Título de Obra',
                   :paginas => 10,
                   :volumen => 3,
@@ -334,19 +334,19 @@ describe BiblioRefs do
              :fecha_publicacion => '1st June 2004'
       end
 
-      @articulo_periodico = BiblioRefs::ArticuloPeriodico.new do
+      @articulo_periodico = BiblioRefs::ArticuloPeriodico.crear do
         autor :apellido => 'Apellido',
               :nombre => 'Nombre'
-        titulo :titulo => 'Título'
+        title  'Título'
         periodico :nombre_periodico => 'Nombre Periodico',
                   :num_paginas => 10
         info      :fecha_publicacion => '1st June 2004'
       end
 
-      @documento = BiblioRefs::DocumentoElectronico.new do
+      @documento = BiblioRefs::DocumentoElectronico.crear do
         autor :apellido => 'Apellido',
               :nombre => 'Nombre'
-        titulo :titulo => 'Título'
+        title  'Título'
         documento :tipo_medio => 'Tipo de Medio',
                   :via => 'Tipo de vía',
                   :fecha_acceso => '15th June 2004'

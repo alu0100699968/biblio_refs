@@ -11,6 +11,11 @@ module BiblioRefs
       @num_paginas = num_paginas
     end
 
+    def periodico(periodico = {})
+      @nombre_periodico = periodico[:nombre_periodico]
+      @num_paginas = periodico[:num_paginas]
+    end
+
     def autores_to_s
       final = ""
       if autores.kind_of?(Array)

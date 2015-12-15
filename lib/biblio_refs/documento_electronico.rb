@@ -14,6 +14,12 @@ module BiblioRefs
       @fecha_acceso = fecha_acceso
     end
 
+    def documento(documento = {})
+      @tipo_medio = documento[:tipo_medio]
+      @via = documento[:via]
+      @fecha_acceso = Date.parse(documento[:fecha_acceso])
+    end
+
     def autores_to_s
       final = ""
       if autores.kind_of?(Array)

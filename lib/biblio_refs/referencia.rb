@@ -5,6 +5,26 @@ module BiblioRefs
     include Comparable
     attr_accessor :autores, :titulo, :serie, :editorial, :num_edicion, :fecha_publicacion, :isbn
 
+    #def initialize(&block)
+    #  instance_eval &block
+    #end
+
+    def self.crear(&block)
+      if self == BiblioRefs::Libro
+        nuevo = self.new(nil, nil, nil, nil, nil, nil)
+      elsif self == BiblioRefs::ArticuloRevista
+        nuevo = self.new(nil, nil, nil, nil, nil, nil, nil, nil, nil)
+      elsif self == BiblioRefs::ArticuloPeriodico
+        nuevo = self.new(nil, nil, nil, nil, nil)
+      elsif self == BiblioRefs::DocumentoElectronico
+        nuevo = self.new(nil, nil, nil, nil, nil, nil, nil, nil)
+      else
+        puts "No funciona NADA."
+      end
+      nuevo.instance_eval &block
+      nuevo
+    end
+
     def initialize(autores, titulo, serie = nil, editorial, num_edicion, fecha_publicacion, isbn)
       @autores = autores
       @titulo = titulo
@@ -13,6 +33,20 @@ module BiblioRefs
       @num_edicion = num_edicion
       @fecha_publicacion = fecha_publicacion
       @isbn = isbn
+    end
+
+    def autor(autor = {})
+      @autores = "#{autor[:apellido]}, #{autor[:nombre]}}"
+    end
+
+    def title(titulo = {})
+      @titulo = titulo
+    end
+
+    def info(info = {})
+      @editorial = info[:editorial]
+      @num_edicion = info[:num_edicion]
+      @fecha_publicacion = Date.parse(info[:fecha_publicacion])
     end
 
     def autores_to_s
