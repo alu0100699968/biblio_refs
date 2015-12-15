@@ -22,21 +22,6 @@ module BiblioRefs
       @eds = articulo[:eds]
     end
 
-    def autores_to_s
-      final = ""
-      if autores.kind_of?(Array)
-        autores.each do |autor|
-          final += autor
-          final += " & "
-        end
-        final[-1] = ""
-      else
-        final += autores
-        final += "  "
-      end
-      final.chop
-    end
-
     def fecha_publicacion_to_s
       "(" + fecha_publicacion.year.to_s + "). "
     end
@@ -57,7 +42,7 @@ module BiblioRefs
     end
 
     def to_s
-      final = autores_to_s + fecha_publicacion_to_s
+      final = autores_to_s + " " + fecha_publicacion_to_s
       final += "\n\t" + titulo_to_s + ". En " + eds_to_s + "(Eds.), "
       final += titulo_obra.to_s + " (" + paginas.to_s + ") " + "(" + num_edicion_to_s + ") "
       final += "(" + volumen.to_s + "). Lugar de publicación: " + editorial_to_s

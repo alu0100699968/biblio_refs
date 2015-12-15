@@ -36,7 +36,7 @@ module BiblioRefs
     end
 
     def autor(autor = {})
-      @autores = "#{autor[:apellido]}, #{autor[:nombre]}}"
+      @autores = "#{autor[:apellido]}, #{autor[:nombre]}"
     end
 
     def title(titulo = {})
@@ -54,12 +54,12 @@ module BiblioRefs
       if autores.kind_of?(Array)
         autores.each do |autor|
           final += autor
-          final += ", "
+          final += " & "
         end
-        final[-2] = "."
+        final[-2..-1] = ""
       else
         final += autores
-        final += ". "
+        final += " "
       end
       final.chop
     end
@@ -107,7 +107,7 @@ module BiblioRefs
     end
 
     def to_s
-      final = autores_to_s + "\n" + titulo_to_s + "\n"
+      final = autores_to_s + ".\n" + titulo_to_s + "\n"
       if serie != nil
         final += serie_to_s + "\n"
       end

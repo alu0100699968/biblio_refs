@@ -47,8 +47,8 @@ describe BiblioRefs do
 
   describe 'Comprobación de métodos to_s' do
     it 'Debe existir un método que devuelva los autores' do
-      expect(@ref1.autores_to_s).to eq('Dave Thomas, Andy Hunt, Chad Fowler.')
-      expect(@ref2.autores_to_s).to eq('J.R.R Tolkien.')
+      expect(@ref1.autores_to_s).to eq('Dave Thomas & Andy Hunt & Chad Fowler')
+      expect(@ref2.autores_to_s).to eq('J.R.R Tolkien')
     end
 
     it 'Debe existir un método que devuelva el título' do
@@ -82,7 +82,7 @@ describe BiblioRefs do
     end
 
     it 'Debe existir un método que devuelva la referencia formateada' do
-      expect(@ref1.to_s).to eq ("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
+      expect(@ref1.to_s).to eq ("Dave Thomas & Andy Hunt & Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
       expect(@ref2.to_s).to eq ("J.R.R Tolkien.\nEl Hobbit\nMinotauro; 2 edition (February 1, 1982)\nISBN-10: 0345538374")
     end
   end
@@ -356,11 +356,18 @@ describe BiblioRefs do
       end
     end
 
-    it 'Se generan los objetos' do
+    it 'Se generan los objetos (comprobando el título)' do
       expect(@libro.titulo_to_s).to eq("Título")
       expect(@articulo.titulo_to_s).to eq("Título")
       expect(@articulo_periodico.titulo_to_s).to eq("Título")
       expect(@documento.titulo_to_s).to eq("Título")
+    end
+
+    it 'El nombre de los autores se pasa correctamente' do
+      expect(@libro.autores_to_s).to eq("Apellido, Nombre")
+      expect(@articulo.autores_to_s).to eq("Apellido, Nombre")
+      expect(@articulo_periodico.autores_to_s).to eq("Apellido, Nombre")
+      expect(@documento.autores_to_s).to eq("Apellido, Nombre")
     end
   end
 end

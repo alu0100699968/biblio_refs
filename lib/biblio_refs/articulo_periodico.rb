@@ -16,23 +16,8 @@ module BiblioRefs
       @num_paginas = periodico[:num_paginas]
     end
 
-    def autores_to_s
-      final = ""
-      if autores.kind_of?(Array)
-        autores.each do |autor|
-          final += autor
-          final += " & "
-        end
-        final[-1] = ""
-      else
-        final += autores
-        final += "  "
-      end
-      final.chop
-    end
-
     def to_s
-      final = autores_to_s + "(" + fecha_publicacion_to_s + "). "
+      final = autores_to_s + " (" + fecha_publicacion_to_s + "). "
       final += "\n\t" + titulo_to_s + ". " + nombre_periodico.to_s + ", pp. "
       final += num_paginas.to_s + "."
     end
