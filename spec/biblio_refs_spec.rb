@@ -314,6 +314,8 @@ describe BiblioRefs do
       @libro = BiblioRefs::Libro.crear do
         autor :apellido => 'Apellido',
               :nombre => 'Nombre'
+        autor :apellido => 'Apellido2',
+              :nombre => 'Nombre2'
         title 'Título'
         libro :volumen => 3
         info :editorial => 'Editorial',
@@ -364,7 +366,7 @@ describe BiblioRefs do
     end
 
     it 'El nombre de los autores se pasa correctamente' do
-      expect(@libro.autores_to_s).to eq("Apellido, Nombre")
+      expect(@libro.autores_to_s).to eq("Apellido, Nombre & Apellido2, Nombre2")
       expect(@articulo.autores_to_s).to eq("Apellido, Nombre")
       expect(@articulo_periodico.autores_to_s).to eq("Apellido, Nombre")
       expect(@documento.autores_to_s).to eq("Apellido, Nombre")
