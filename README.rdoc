@@ -1,6 +1,6 @@
 = \biblio-refs - Gema para representar Referencias Bibliográficas
 
-== Descrición
+== Descripción
 
 Esta gema permite la creación de diferentes tipos de referencias bibliográficas
 (libro, artículos y documentos electrónicos)
