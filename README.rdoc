@@ -1,0 +1,20 @@
+= \biblio-refs - Gema para representar Referencias Bibliográficas
+
+== Descrición
+
+Esta gema permite la creación de diferentes tipos de referencias bibliográficas
+(libro, artículos y documentos electrónicos)
+
+== Instalación
+
+Se añade esta línea al Gemfile:
+
+  gem 'biblio-refs'
+
+Luego se ejecuta:
+
+    $ bundle
+
+O se puede instalar manualmente mediante:
+
+    $ gem install biblio-refs

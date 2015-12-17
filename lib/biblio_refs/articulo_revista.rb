@@ -1,8 +1,11 @@
 module BiblioRefs
+  #Clase para representar referencias bibliográficas de un artículo.
+  #Hereda de PublicacionesPeriodicas.
   class ArticuloRevista < PublicacionesPeriodicas
 
     attr_accessor :titulo_obra, :paginas, :volumen, :eds
 
+    #Constructor de la clase ArticuloRevista
     def initialize(autores, titulo, titulo_obra, editorial, num_edicion, fecha_publicacion, volumen, paginas, eds)
       @autores = autores
       @titulo = titulo
@@ -15,6 +18,8 @@ module BiblioRefs
       @eds = eds
     end
 
+    #Método para asignar valores a los atributos titulo_obra, paginas, volumen y
+    #eds cuando se crean los objetos mediante el DSL.
     def articulo(articulo = {})
       @titulo_obra = articulo[:titulo_obra]
       @paginas = articulo[:paginas]
@@ -22,10 +27,12 @@ module BiblioRefs
       @eds = articulo[:eds]
     end
 
+    #Método para devolver un String con la fecha_publicacion correctamente formateada
     def fecha_publicacion_to_s
       "(" + fecha_publicacion.year.to_s + "). "
     end
 
+    #Método para devolver un String con los editores correctamente formateados
     def eds_to_s
       final = ""
       if eds.kind_of?(Array)
@@ -41,6 +48,7 @@ module BiblioRefs
       final.chop
     end
 
+    #Método to_s de la clase que agrupa el resto de métodos 'to_s' declarados.
     def to_s
       final = autores_to_s + " " + fecha_publicacion_to_s
       final += "\n\t" + titulo_to_s + ". En " + eds_to_s + "(Eds.), "

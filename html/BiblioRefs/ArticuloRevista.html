@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class BiblioRefs::ArticuloRevista - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">PublicacionesPeriodicas
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-articulo">#articulo</a>
+    
+    <li ><a href="#method-i-eds_to_s">#eds_to_s</a>
+    
+    <li ><a href="#method-i-fecha_publicacion_to_s">#fecha_publicacion_to_s</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-BiblioRefs::ArticuloRevista">
+  <h1 id="class-BiblioRefs::ArticuloRevista" class="class">
+    class BiblioRefs::ArticuloRevista
+  </h1>
+
+  <section class="description">
+    
+<p>Clase para representar referencias bibliográficas de un artículo. Hereda de
+<a href="PublicacionesPeriodicas.html">PublicacionesPeriodicas</a>.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-eds" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">eds</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-paginas" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">paginas</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-titulo_obra" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">titulo_obra</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-volumen" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">volumen</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(autores, titulo, titulo_obra, editorial, num_edicion, fecha_publicacion, volumen, paginas, eds)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Constructor de la clase <a href="ArticuloRevista.html">ArticuloRevista</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/biblio_refs/articulo_revista.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">autores</span>, <span class="ruby-identifier">titulo</span>, <span class="ruby-identifier">titulo_obra</span>, <span class="ruby-identifier">editorial</span>, <span class="ruby-identifier">num_edicion</span>, <span class="ruby-identifier">fecha_publicacion</span>, <span class="ruby-identifier">volumen</span>, <span class="ruby-identifier">paginas</span>, <span class="ruby-identifier">eds</span>)
+  <span class="ruby-ivar">@autores</span> = <span class="ruby-identifier">autores</span>
+  <span class="ruby-ivar">@titulo</span> = <span class="ruby-identifier">titulo</span>
+  <span class="ruby-ivar">@titulo_obra</span> = <span class="ruby-identifier">titulo_obra</span>
+  <span class="ruby-ivar">@editorial</span> = <span class="ruby-identifier">editorial</span>
+  <span class="ruby-ivar">@num_edicion</span> = <span class="ruby-identifier">num_edicion</span>
+  <span class="ruby-ivar">@fecha_publicacion</span> = <span class="ruby-identifier">fecha_publicacion</span>
+  <span class="ruby-ivar">@volumen</span> = <span class="ruby-identifier">volumen</span>
+  <span class="ruby-ivar">@paginas</span> = <span class="ruby-identifier">paginas</span>
+  <span class="ruby-ivar">@eds</span> = <span class="ruby-identifier">eds</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-articulo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">articulo</span><span
+            class="method-args">(articulo = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método para asignar valores a los atributos <a
+href="ArticuloRevista.html#attribute-i-titulo_obra">#titulo_obra</a>,
+paginas, volumen y eds cuando se crean los objetos mediante el DSL.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="articulo-source">
+            <pre><span class="ruby-comment"># File lib/biblio_refs/articulo_revista.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">articulo</span>(<span class="ruby-identifier">articulo</span> = {})
+  <span class="ruby-ivar">@titulo_obra</span> = <span class="ruby-identifier">articulo</span>[<span class="ruby-value">:titulo_obra</span>]
+  <span class="ruby-ivar">@paginas</span> = <span class="ruby-identifier">articulo</span>[<span class="ruby-value">:paginas</span>]
+  <span class="ruby-ivar">@volumen</span> = <span class="ruby-identifier">articulo</span>[<span class="ruby-value">:volumen</span>]
+  <span class="ruby-ivar">@eds</span> = <span class="ruby-identifier">articulo</span>[<span class="ruby-value">:eds</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-eds_to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eds_to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método para devolver un String con los editores correctamente formateados</p>
+          
+          
+
+          
+          <div class="method-source-code" id="eds_to_s-source">
+            <pre><span class="ruby-comment"># File lib/biblio_refs/articulo_revista.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eds_to_s</span>
+  <span class="ruby-identifier">final</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">eds</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+    <span class="ruby-identifier">eds</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ed</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">ed</span>
+      <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &amp; &quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">final</span>[<span class="ruby-value">-1</span>] = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">eds</span>
+    <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;  &quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">final</span>.<span class="ruby-identifier">chop</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fecha_publicacion_to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fecha_publicacion_to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método para devolver un String con la fecha_publicacion correctamente
+formateada</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fecha_publicacion_to_s-source">
+            <pre><span class="ruby-comment"># File lib/biblio_refs/articulo_revista.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fecha_publicacion_to_s</span>
+  <span class="ruby-string">&quot;(&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">fecha_publicacion</span>.<span class="ruby-identifier">year</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;). &quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Método <a href="ArticuloRevista.html#method-i-to_s">#to_s</a> de la clase
+que agrupa el resto de métodos &#39;to_s&#39; declarados.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/biblio_refs/articulo_revista.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">final</span> = <span class="ruby-identifier">autores_to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">fecha_publicacion_to_s</span>
+  <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\n\t&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">titulo_to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;. En &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">eds_to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;(Eds.), &quot;</span>
+  <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">titulo_obra</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; (&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">paginas</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;) &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;(&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">num_edicion_to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;) &quot;</span>
+  <span class="ruby-identifier">final</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;(&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">volumen</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;). Lugar de publicación: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">editorial_to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

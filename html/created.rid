@@ -1,0 +1,11 @@
+Thu, 17 Dec 2015 11:23:59 +0000
+README.rdoc	Thu, 17 Dec 2015 11:21:28 +0000
+lib/biblio_refs/articulo_periodico.rb	Thu, 17 Dec 2015 10:59:11 +0000
+lib/biblio_refs/articulo_revista.rb	Thu, 17 Dec 2015 10:58:11 +0000
+lib/biblio_refs/documento_electronico.rb	Thu, 17 Dec 2015 11:00:42 +0000
+lib/biblio_refs/libro.rb	Thu, 17 Dec 2015 10:56:02 +0000
+lib/biblio_refs/list.rb	Thu, 17 Dec 2015 11:04:58 +0000
+lib/biblio_refs/lista_apa.rb	Thu, 17 Dec 2015 11:02:25 +0000
+lib/biblio_refs/publicaciones_periodicas.rb	Thu, 17 Dec 2015 11:05:33 +0000
+lib/biblio_refs/referencia.rb	Thu, 17 Dec 2015 10:54:04 +0000
+lib/biblio_refs/version.rb	Thu, 19 Nov 2015 15:08:34 +0000
